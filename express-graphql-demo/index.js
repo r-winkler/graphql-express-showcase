@@ -18,4 +18,9 @@ async function run() {
     app.listen(5000);
 }
 
-run();
+try {
+    run()
+}
+catch (e) {
+    console.log(e)
+}

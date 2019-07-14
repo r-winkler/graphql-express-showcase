@@ -9,7 +9,7 @@ var {
     mergeSchemas
 } = require('graphql-tools');
 
-var {HttpLink} = require('apollo-link-http');
+var {createHttpLink} = require('apollo-link-http');
 var fetch = require('node-fetch');
 var { createApolloFetch } = require('apollo-fetch');
 
@@ -80,37 +80,45 @@ var schema1 = new GraphQLSchema({
 
 
 var COUNTRIES_URL = 'https://countries.trevorblades.com';
+//var COUNTRIES_URL = 'http://api.githunt.com/graphql';
+//var COUNTRIES_URL = 'https://bahnql.herokuapp.com/graphql';
 
-
-const fetcher = createApolloFetch({ uri: COUNTRIES_URL});
 
 const createRemoteExecutableSchema = async () => {
 
     // Create Apollo link with URI and headers of the GraphQL API
-    const link = new HttpLink({
+
+    const link = createHttpLink({
         uri: COUNTRIES_URL,
         fetch
     });
     // Introspect schema
-    console.log('schema5')
+    let schema;
+    try {
+        schema = await introspectSchema(link);
+        console.log(schema)
+    }
+    catch (e) {
+        console.log(e)
+    }
+
     // Make remote executable schema
     const remoteExecutableSchema = makeRemoteExecutableSchema({
-        schema: await introspectSchema(fetcher),
-        fetcher
+        schema: schema,
+        fetch
     });
-    console.log('schema6')
+    console.log('Remote schema successfully created');
 
     return remoteExecutableSchema;
 };
 
 const createNewSchema = async () => {
-    console.log('schema')
     const schema2 = await createRemoteExecutableSchema();
-    console.log('schema2')
     return mergeSchemas({
         schemas: [
             schema1,
             schema2
+
         ],
     });
 };
