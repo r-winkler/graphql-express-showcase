@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "firstname": "Cherry",
+    "lastname": "Melendez",
+    "age": 27,
+    "gender": "female",
+    "picture": "http://placehold.it/32x32",
+    "email": "cherrymelendez@exoteric.com",
+    "phone": "+1 (872) 514-2853",
+    "address": "737 Greene Avenue, Robinson, Arkansas, 8194",
+    "friends": [4, 6]
+  },
+  {
+    "id": 2,
+    "firstname": "Hooper",
+    "lastname": "Avery",
+    "age": 32,
+    "gender": "male",
+    "picture": "http://placehold.it/32x32",
+    "email": "hooperavery@exoteric.com",
+    "phone": "+1 (802) 562-2003",
+    "address": "901 Williams Court, Hiko, North Dakota, 2139",
+    "friends": [3, 7, 10]
+  },
+  {
+    "id": 3,
+    "firstname": "Gardner",
+    "lastname": "Montoya",
+    "age": 36,
+    "gender": "male",
+    "picture": "http://placehold.it/32x32",
+    "email": "gardnermontoya@exoteric.com",
+    "phone": "+1 (900) 505-3331",
+    "address": "691 Downing Street, Ladera, California, 9034",
+    "friends": [2]
+  },
+  {
+    "id": 4,
+    "firstname": "Kay",
+    "lastname": "Harrell",
+    "age": 29,
+    "gender": "female",
+    "picture": "http://placehold.it/32x32",
+    "email": "kayharrell@exoteric.com",
+    "phone": "+1 (992) 418-3814",
+    "address": "623 Gain Court, Calverton, New York, 7112",
+    "friends": [7, 8]
+  },
+  {
+    "id": 5,
+    "firstname": "Bridgette",
+    "lastname": "Sutton",
+    "age": 35,
+    "gender": "female",
+    "picture": "http://placehold.it/32x32",
+    "email": "bridgettesutton@exoteric.com",
+    "phone": "+1 (990) 544-3352",
+    "address": "168 Nassau Avenue, Ahwahnee, Kansas, 8401",
+    "friends": [1, 9, 10]
+  },
+  {
+    "id": 6,
+    "firstname": "Esperanza",
+    "lastname": "Wheeler",
+    "age": 21,
+    "gender": "female",
+    "picture": "http://placehold.it/32x32",
+    "email": "esperanzawheeler@exoteric.com",
+    "phone": "+1 (886) 511-2115",
+    "address": "514 Grace Court, Felt, Oklahoma, 1924",
+    "friends": [9, 10]
+  },
+  {
+    "id": 7,
+    "firstname": "Daugherty",
+    "lastname": "Rocha",
+    "age": 27,
+    "gender": "male",
+    "picture": "http://placehold.it/32x32",
+    "email": "daughertyrocha@exoteric.com",
+    "phone": "+1 (923) 569-3193",
+    "address": "783 Stuart Street, Woodlands, Palau, 9447",
+    "friends": [2, 5, 9]
+  },
+  {
+    "id": 8,
+    "firstname": "Marsh",
+    "lastname": "Combs",
+    "age": 27,
+    "gender": "male",
+    "picture": "http://placehold.it/32x32",
+    "email": "marshcombs@exoteric.com",
+    "phone": "+1 (962) 437-3005",
+    "address": "616 Vanderveer Street, Aurora, Wyoming, 3843",
+    "friends": []
+  },
+  {
+    "id": 9,
+    "firstname": "Bridgett",
+    "lastname": "Stark",
+    "age": 38,
+    "gender": "female",
+    "picture": "http://placehold.it/32x32",
+    "email": "bridgettstark@exoteric.com",
+    "phone": "+1 (821) 403-3299",
+    "address": "259 Kimball Street, Sattley, Massachusetts, 3740",
+    "friends": [4, 5]
+  },
+  {
+    "id": 10,
+    "firstname": "Kellie",
+    "lastname": "Lopez",
+    "age": 20,
+    "gender": "female",
+    "picture": "http://placehold.it/32x32",
+    "email": "kellielopez@exoteric.com",
+    "phone": "+1 (949) 419-2111",
+    "address": "365 Micieli Place, Noxen, Puerto Rico, 2568",
+    "friends": [1,8]
+  }
+]
