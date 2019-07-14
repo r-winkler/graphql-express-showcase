@@ -9,7 +9,8 @@
     "email": "cherrymelendez@exoteric.com",
     "phone": "+1 (872) 514-2853",
     "address": "737 Greene Avenue, Robinson, Arkansas, 8194",
-    "friends": [4, 6]
+    "friends": [4, 6],
+    "countryCode": "GB"
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "email": "hooperavery@exoteric.com",
     "phone": "+1 (802) 562-2003",
     "address": "901 Williams Court, Hiko, North Dakota, 2139",
-    "friends": [3, 7, 10]
+    "friends": [3, 7, 10],
+    "countryCode": "FR"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "email": "gardnermontoya@exoteric.com",
     "phone": "+1 (900) 505-3331",
     "address": "691 Downing Street, Ladera, California, 9034",
-    "friends": [2]
+    "friends": [2],
+    "countryCode": "GB"
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "email": "kayharrell@exoteric.com",
     "phone": "+1 (992) 418-3814",
     "address": "623 Gain Court, Calverton, New York, 7112",
-    "friends": [7, 8]
+    "friends": [7, 8],
+    "countryCode": "GB"
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "email": "bridgettesutton@exoteric.com",
     "phone": "+1 (990) 544-3352",
     "address": "168 Nassau Avenue, Ahwahnee, Kansas, 8401",
-    "friends": [1, 9, 10]
+    "friends": [1, 9, 10],
+    "countryCode": "FR"
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "email": "esperanzawheeler@exoteric.com",
     "phone": "+1 (886) 511-2115",
     "address": "514 Grace Court, Felt, Oklahoma, 1924",
-    "friends": [9, 10]
+    "friends": [9, 10],
+    "countryCode": "GB"
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
     "email": "daughertyrocha@exoteric.com",
     "phone": "+1 (923) 569-3193",
     "address": "783 Stuart Street, Woodlands, Palau, 9447",
-    "friends": [2, 5, 9]
+    "friends": [2, 5, 9],
+    "countryCode": "FR"
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
     "email": "marshcombs@exoteric.com",
     "phone": "+1 (962) 437-3005",
     "address": "616 Vanderveer Street, Aurora, Wyoming, 3843",
-    "friends": []
+    "friends": [],
+    "countryCode": "GB"
   },
   {
     "id": 9,
@@ -105,7 +113,8 @@
     "email": "bridgettstark@exoteric.com",
     "phone": "+1 (821) 403-3299",
     "address": "259 Kimball Street, Sattley, Massachusetts, 3740",
-    "friends": [4, 5]
+    "friends": [4, 5],
+    "countryCode": "FR"
   },
   {
     "id": 10,
@@ -117,6 +126,7 @@
     "email": "kellielopez@exoteric.com",
     "phone": "+1 (949) 419-2111",
     "address": "365 Micieli Place, Noxen, Puerto Rico, 2568",
-    "friends": [1,8]
+    "friends": [1,8],
+    "countryCode": "GB"
   }
 ]

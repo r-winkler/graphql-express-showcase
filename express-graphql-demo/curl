@@ -1,0 +1,4 @@
+curl -X POST \
+-H "Content-Type: application/json" \
+-d '{"query": "{ continents {name} }"}' \
+https://countries.trevorblades.com/
