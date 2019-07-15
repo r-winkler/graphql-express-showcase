@@ -4,23 +4,16 @@ import { createHttpLink } from 'apollo-link-http';
 import fetch from 'node-fetch'
 
 
+export const createRemoteExecutableSchema = async (uri) => {
 
-const COUNTRIES_URL = 'https://countries.trevorblades.com';
-
-
-
-export const createRemoteExecutableSchema = async () => {
-
-    // Create Apollo link with URI and headers of the GraphQL API
 
     const link = createHttpLink({
-        uri: COUNTRIES_URL,
+        uri: uri,
         fetch
     });
-    // Introspect schema
+
     const schema = await introspectSchema(link);
 
-    // Make remote executable schema
     const remoteExecutableSchema = makeRemoteExecutableSchema({
         schema: schema,
         link
@@ -29,7 +22,3 @@ export const createRemoteExecutableSchema = async () => {
 
     return remoteExecutableSchema;
 };
-
-
-
-module.exports = {createRemoteExecutableSchema};
