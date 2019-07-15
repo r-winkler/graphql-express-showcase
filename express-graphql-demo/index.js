@@ -1,8 +1,8 @@
-const express = require('express');
-const graphQLHTTP = require('express-graphql');
-const {personSchema} = require('./person-schema');
-const {createRemoteExecutableSchema} = require('./remote-schema-creator');
-const {mergeSchemas} = require('graphql-tools');
+import express from 'express';
+import graphQLHTTP from 'express-graphql';
+import {personSchema} from './person-schema';
+import {createRemoteExecutableSchema} from './remote-schema-creator';
+import {mergeSchemas} from 'graphql-tools';
 
 
 

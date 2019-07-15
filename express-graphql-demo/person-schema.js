@@ -1,9 +1,9 @@
-const {
+import {
     GraphQLInt, GraphQLList,
     GraphQLObjectType,
-    GraphQLSchema, GraphQLString} = require('graphql');
+    GraphQLSchema, GraphQLString} from 'graphql';
 
-const axios = require("axios");
+import axios from 'axios';
 
 
 const PERSONS_URL = 'http://localhost:3000';
@@ -54,11 +54,8 @@ const QueryType = new GraphQLObjectType({
 });
 
 
-const personSchema = new GraphQLSchema({
+export const personSchema = new GraphQLSchema({
     query: QueryType
 });
 
-
-
-module.exports = {personSchema};
 

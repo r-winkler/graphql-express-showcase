@@ -5,12 +5,11 @@ import fetch from 'node-fetch'
 
 
 
-const COUNTRIES_URL = 'https://countries.trevorblades.com/graphql';
-//const COUNTRIES_URL = 'http://api.githunt.com/graphql';
-//const COUNTRIES_URL = 'https://bahnql.herokuapp.com/graphql';
+const COUNTRIES_URL = 'https://countries.trevorblades.com';
 
 
-const createRemoteExecutableSchema = async () => {
+
+export const createRemoteExecutableSchema = async () => {
 
     // Create Apollo link with URI and headers of the GraphQL API
 
