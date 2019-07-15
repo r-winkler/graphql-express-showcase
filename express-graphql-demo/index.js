@@ -1,22 +1,32 @@
-var express = require('express');
-var graphQLHTTP = require('express-graphql');
-var {createNewSchema} = require('./schema');
+const express = require('express');
+const graphQLHTTP = require('express-graphql');
+const {personSchema} = require('./person-schema');
+const {createRemoteExecutableSchema} = require('./remote-schema-creator');
+const {mergeSchemas} = require('graphql-tools');
 
 
 
 async function run() {
 
-    var app = express();
+    const app = express();
 
-    var schema = await createNewSchema();
+    const countrySchema = await createRemoteExecutableSchema();
+
+    const mergedSchema = mergeSchemas({
+        schemas: [
+            personSchema,
+            countrySchema
+        ],
+    });
 
     app.use(graphQLHTTP({
-        schema,
+        schema: mergedSchema,
         graphiql: true
     }));
 
     app.listen(5000);
 }
+
 
 try {
     run()
