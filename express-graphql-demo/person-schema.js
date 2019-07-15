@@ -30,7 +30,8 @@ const PersonType = new GraphQLObjectType({
             type: new GraphQLList(PersonType),
             resolve: (person) => person.friends.map(getPersonById)
         },
-        countryCode: {type: GraphQLString}
+        countryCode: {
+            type: GraphQLString}
     })
 });
 
