@@ -6,7 +6,6 @@ import {mergeSchemas} from 'graphql-tools';
 
 
 const COUNTRIES_URL = 'https://countries.trevorblades.com';
-// const DEUTSCHE_BAHN_URL = 'https://bahnql.herokuapp.com/graphql';
 
 
 async function run() {
@@ -14,7 +13,6 @@ async function run() {
     const app = express();
 
     const countrySchema = await createRemoteExecutableSchema(COUNTRIES_URL);
-    // const deutscheBahnSchema = await createRemoteExecutableSchema(DEUTSCHE_BAHN_URL);
 
 
     const linkSchemaDefs = `
@@ -27,25 +25,27 @@ async function run() {
             personSchema,
             countrySchema,
             linkSchemaDefs
-            // deutscheBahnSchema
         ],
-        resolvers: mergeInfo => ({
+        resolvers: {
             Person: {
                 country: {
                     fragment: `fragment CountryFragment on Person {countryCode}`,
                     resolve(parent, args, context, info) {
                         const countryCode = parent.countryCode;
-                        return mergeInfo.delegate(
-                            'query',
-                            'country',
-                            {'code': countryCode},
-                            context,
-                            info
+
+                        return info.mergeInfo.delegateToSchema({
+                                schema: countrySchema,
+                                operation: 'query',
+                                fieldName: 'country',
+                                args: {'code': countryCode},
+                                context: context,
+                                info: info
+                            }
                         )
                     }
                 }
             }
-        })
+        }
     });
 
     app.use(graphQLHTTP({
