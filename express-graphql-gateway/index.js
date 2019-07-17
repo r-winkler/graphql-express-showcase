@@ -1,12 +1,12 @@
 import express from 'express';
 import graphQLHTTP from 'express-graphql';
-import {personSchema} from './person-schema';
+import {getPersonById, personSchema} from './person-schema';
 import {createRemoteExecutableSchema} from './remote-schema-creator';
 import {mergeSchemas} from 'graphql-tools';
+import DataLoader from 'dataloader'
 
 
 const COUNTRIES_URL = 'https://countries.trevorblades.com';
-
 
 async function run() {
 
@@ -48,9 +48,19 @@ async function run() {
         }
     });
 
-    app.use(graphQLHTTP({
-        schema: mergedSchema,
-        graphiql: true
+    app.use(graphQLHTTP( req => {
+
+        const personLoader = new DataLoader(
+            keys => Promise.all(keys.map(getPersonById))
+        );
+        const loaders = {
+            person: personLoader
+        };
+        return {
+            context: {loaders},
+            schema: mergedSchema,
+            graphiql: true
+        }
     }));
 
     app.listen(5000);

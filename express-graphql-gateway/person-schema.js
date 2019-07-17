@@ -5,10 +5,9 @@ import {
 
 import axios from 'axios';
 
-
 const PERSONS_URL = 'http://localhost:3000';
 
-function getPersonById(id) {
+export function getPersonById(id) {
     return axios(`${PERSONS_URL}/persons/${id}`).then(res => res.data);
 }
 
@@ -28,7 +27,7 @@ const PersonType = new GraphQLObjectType({
         address: {type: GraphQLString},
         friends: {
             type: new GraphQLList(PersonType),
-            resolve: (person) => person.friends.map(getPersonById)
+            resolve: (person, args, {loaders}) => loaders.person.loadMany(person.friends)
         },
         countryCode: {
             type: GraphQLString}
@@ -45,7 +44,7 @@ const QueryType = new GraphQLObjectType({
             args: {
                 id: {type: GraphQLString}
             },
-            resolve: (root, args) => getPersonById(args.id)
+            resolve: (root, args, {loaders}) => loaders.person.load(`/persons/${args.id}`)
         },
         allPersons: {
             type: new GraphQLList(PersonType),
