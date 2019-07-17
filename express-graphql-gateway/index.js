@@ -34,7 +34,6 @@ async function run() {
                 country: {
                     fragment: `fragment CountryFragment on Person {countryCode}`,
                     resolve(parent, args, context, info) {
-                        console.log(args)
                         const countryCode = parent.countryCode;
                         return mergeInfo.delegate(
                             'query',
