@@ -13,7 +13,7 @@ The Gateway combines an internal Rest api and an external GraphQL endpoint.
 ### branches
 
 - schema-stitching: demo for schema-stitching
-- master: demo for schema-stitching and queries optimized by datalaoder
+- dataloader: demo for schema-stitching and queries optimized by dataloader
 
 #### Example query
 
