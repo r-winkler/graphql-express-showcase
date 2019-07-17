@@ -9,7 +9,7 @@
     "email": "cherrymelendez@exoteric.com",
     "phone": "+1 (872) 514-2853",
     "address": "737 Greene Avenue, Robinson, Arkansas, 8194",
-    "friends": [4, 6],
+    "friends": [3, 4, 6],
     "countryCode": "DE"
   },
   {
@@ -22,7 +22,7 @@
     "email": "hooperavery@exoteric.com",
     "phone": "+1 (802) 562-2003",
     "address": "901 Williams Court, Hiko, North Dakota, 2139",
-    "friends": [3, 7, 10],
+    "friends": [3, 7, 9, 10],
     "countryCode": "CH"
   },
   {
@@ -35,7 +35,7 @@
     "email": "gardnermontoya@exoteric.com",
     "phone": "+1 (900) 505-3331",
     "address": "691 Downing Street, Ladera, California, 9034",
-    "friends": [2],
+    "friends": [2, 10],
     "countryCode": "IT"
   },
   {
@@ -48,7 +48,7 @@
     "email": "kayharrell@exoteric.com",
     "phone": "+1 (992) 418-3814",
     "address": "623 Gain Court, Calverton, New York, 7112",
-    "friends": [7, 8],
+    "friends": [2, 7, 8, 10],
     "countryCode": "CH"
   },
   {
@@ -61,7 +61,7 @@
     "email": "bridgettesutton@exoteric.com",
     "phone": "+1 (990) 544-3352",
     "address": "168 Nassau Avenue, Ahwahnee, Kansas, 8401",
-    "friends": [1, 9, 10],
+    "friends": [1, 2, 9, 10],
     "countryCode": "HU"
   },
   {
@@ -87,7 +87,7 @@
     "email": "daughertyrocha@exoteric.com",
     "phone": "+1 (923) 569-3193",
     "address": "783 Stuart Street, Woodlands, Palau, 9447",
-    "friends": [2, 5, 9],
+    "friends": [1, 2, 5, 9],
     "countryCode": "BR"
   },
   {
@@ -126,7 +126,7 @@
     "email": "kellielopez@exoteric.com",
     "phone": "+1 (949) 419-2111",
     "address": "365 Micieli Place, Noxen, Puerto Rico, 2568",
-    "friends": [1,8],
+    "friends": [1, 4, 8, 9],
     "countryCode": "AU"
   }
 ]
