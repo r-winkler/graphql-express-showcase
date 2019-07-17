@@ -1,4 +1,4 @@
-# graphql-express-showcase
+# graphql-gateway
 
 Showcase for a GraphQL gateway implemented with node and express.
 
