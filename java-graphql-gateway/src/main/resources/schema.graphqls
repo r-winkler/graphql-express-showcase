@@ -1,0 +1,28 @@
+type Query {
+    person(id: ID!): Person,
+    allPersons: [Person]
+}
+
+type Person {
+    id: ID!,
+    firstname: String,
+    lastname: String,
+    age: Int,
+    gender: String,
+    picture: String,
+    email: String,
+    phone: String,
+    address: String,
+    friends: [Person],
+    country: Country
+}
+
+# as there is no schema stitching for java, type for external schema must be placed here
+type Country {
+    code: String
+    name: String
+    phone: String
+    currency: String
+}
+
+
