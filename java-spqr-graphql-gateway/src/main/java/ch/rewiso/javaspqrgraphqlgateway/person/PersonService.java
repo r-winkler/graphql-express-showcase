@@ -1,7 +1,5 @@
 package ch.rewiso.javaspqrgraphqlgateway.person;
 
-import ch.rewiso.javaspqrgraphqlgateway.country.CountryDTO;
-import graphql.GraphQL;
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLContext;
 import io.leangen.graphql.annotations.GraphQLNonNull;
@@ -14,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
