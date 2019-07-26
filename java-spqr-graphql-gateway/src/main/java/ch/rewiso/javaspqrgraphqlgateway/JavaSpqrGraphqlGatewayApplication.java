@@ -16,4 +16,6 @@ public class JavaSpqrGraphqlGatewayApplication {
     RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
+
 }

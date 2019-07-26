@@ -22,6 +22,15 @@ public class PersonService {
         return response.getBody();
     }
 
+    public List<PersonDTO> findByIds(List<String> ids) {
+        ResponseEntity<List<PersonDTO>> response = restTemplate.exchange(
+                PERSONS_ENDPOINT,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<PersonDTO>>(){});
+        return response.getBody();
+    }
+
     public List<PersonDTO> findAll() {
         ResponseEntity<List<PersonDTO>> response = restTemplate.exchange(
                 PERSONS_ENDPOINT,
