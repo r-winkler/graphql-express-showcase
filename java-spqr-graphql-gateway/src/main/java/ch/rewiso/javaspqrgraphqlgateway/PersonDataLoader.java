@@ -8,40 +8,32 @@ import org.dataloader.DataLoader;
 import org.dataloader.DataLoaderOptions;
 import org.dataloader.DataLoaderRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.WebApplicationContext;
 
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
 
 @Component
-// so that results are not cached all the time but only for one request. This maybe not optimal,
-// see here for details: https://github.com/graphql-java-kickstart/graphql-java-tools/issues/58
-@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class PersonDataLoader implements DataLoaderRegistryFactory {
 
     @Autowired
-    private PersonService personService;
+    private PersonService personService = new PersonService();
 
-    private BatchLoader<Long, PersonDTO> personBatchLoader = new BatchLoader<Long, PersonDTO>() {
-        @Override
-        public CompletionStage<List<PersonDTO>> load(List<Long> ids) {
-            return CompletableFuture.supplyAsync(() -> personService.findByIds(ids));
-        }
-    };
-
-    DataLoaderOptions options = DataLoaderOptions.newOptions().setBatchingEnabled(true);
-    private DataLoader<Long, PersonDTO> personDataLoader = DataLoader.newDataLoader(personBatchLoader, options);
-
+    private BatchLoader<Long, PersonDTO> personBatchLoader = ids -> CompletableFuture.supplyAsync(() -> personService.findByIds(ids));
 
     @Override
     public DataLoaderRegistry createDataLoaderRegistry() {
+
+        /**
+         * IMPORTANT: as long as the creation of the dataloader is placed inside this method here, it gets newly created on every request.
+         * Probably this is what you want ;-) If the creation is not placed here, the dataloader is shared cross the requests and so its cache.
+         * This means results from previous requests are still cached and returned as results.
+         */
+        DataLoaderOptions options = DataLoaderOptions.newOptions().setBatchingEnabled(true);
+        DataLoader<Long, PersonDTO> personDataLoader = DataLoader.newDataLoader(personBatchLoader, options);
 
         DataLoaderRegistry registry = new DataLoaderRegistry();
         registry.register("person", personDataLoader);
         return registry;
     }
+
 }

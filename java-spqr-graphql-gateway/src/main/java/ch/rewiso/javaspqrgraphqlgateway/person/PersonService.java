@@ -24,6 +24,7 @@ public class PersonService {
 
     private static final String PERSONS_ENDPOINT = "http://localhost:3000/persons/";
 
+
     @GraphQLQuery(name = "person")
     public CompletableFuture<PersonDTO> findById(@GraphQLNonNull @GraphQLArgument(name = "id") Long id, @GraphQLEnvironment ResolutionEnvironment environment) {
         DataLoader<Long, PersonDTO> dataLoader = environment.dataFetchingEnvironment.getDataLoader("person");
