@@ -14,7 +14,8 @@ The Gateway combines an internal Rest api and an external GraphQL endpoint.
 
 - schema-stitching: node.js demo for schema-stitching
 - dataloader: node.js demo for schema-stitching and queries optimized by dataloader
-- java: gateway implemented with java (no dataloader, manual "schema stitching", no graphql client)
+- java: java gateways without dataloader and graphql client
+- master: all projects use dataloader
 
 #### Example query
 
